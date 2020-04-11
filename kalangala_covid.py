@@ -19,16 +19,16 @@ t = np.linspace(0, 60, 60)
 
 # The SIR model differential equations.
 def deriv(y, t, N, beta, gamma):
-    S, I, R = y
+    
     dSdt = -beta * S * I / N
     dIdt = beta * S * I / N - gamma * I
     dRdt = gamma * I
-    return dSdt, dIdt, dRdt
+    return 
 
 # Initial conditions vector
 y0 = S0, I0, R0
 # Integrate the SIR equations over the time grid, t.
-ret = odeint(deriv, y0, t, args=(N, beta, gamma))
+ret = odeint(deriv)
 S, I, R = ret.T
 
 for z,j,k,l in zip(t, S, I, R):
